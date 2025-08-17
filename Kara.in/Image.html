@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kamil Ali — UI/UX & Web Designer</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Icons (Font Awesome) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-sri"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    :root{
+      --bg-dark: #0b1220;
+      --text: #eaf1ff;
+      --muted: #c6d3f7cc;
+      --accent: #35b6ff;
+    }
+    *{ box-sizing: border-box; }
+    html, body{
+      height: 100%;
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color: var(--text);
+      background: var(--bg-dark);
+    }
+
+    .hero{
+      position: relative;
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    /* Background image */
+    .hero::before{
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(1200px 600px at 20% 80%, rgba(53,182,255,.15), transparent 60%),
+        radial-gradient(900px 500px at 80% 20%, rgba(255,255,255,.06), transparent 60%),
+        url("https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=1920&auto=format&fit=crop") center/cover no-repeat;
+      filter: saturate(0.8) brightness(0.7);
+      z-index: -2;
+    }
+
+    /* Dark overlay */
+    .hero::after{
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(5,8,15,.75), rgba(5,8,15,.85));
+      z-index: -1;
+    }
+
+    .container{
+      width: min(1100px, 92vw);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: clamp(16px, 4vw, 48px);
+      align-items: center;
+    }
+
+    /* Text block */
+    .stack{
+      max-width: 680px;
+    }
+    .pill{
+      display: inline-block;
+      font-weight: 600;
+      letter-spacing: .08em;
+      font-size: .8rem;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: #bfe8ff;
+      background: rgba(53,182,255,.14);
+      border: 1px solid rgba(53,182,255,.28);
+      backdrop-filter: blur(4px);
+    }
+    h1{
+      margin: 16px 0 10px;
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+    p.lead{
+      margin: 10px 0 0;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 58ch;
+    }
+
+    /* Social rail */
+    .rail{
+  
+      display: grid;
+      gap: 18px;
+      justify-items: center;
+      align-content: center;
+    }
+    .btn-ico{
+      width: 60px; height: 60px;
+      display: grid; place-items: center;
+      border-radius: 50%;
+      background: rgba(53,182,255,.18);
+      border: 1px solid rgba(255,255,255,.18);
+      backdrop-filter: blur(6px);
+      text-decoration: none;
+      transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+
+    }
+    .btn-ico i{
+      font-size: 24px;
+      color: #dff3ff;
+    }
+    .btn-ico:hover{
+      transform: translateY(-2px);
+      background: rgba(53,182,255,.28);
+      box-shadow: 0 8px 28px rgba(0,0,0,.35);
+    }
+
+    /* Responsive */
+    @media (max-width: 820px){
+      .container{ grid-template-columns: 1fr; }
+      .rail{ grid-auto-flow: column; justify-content: start; }
+      .btn-ico{ width: 54px; height: 54px; }
+    }
+
+    /* Safe area padding */
+    .pad{
+      position: absolute;
+      inset: 24px;
+      pointer-events: none;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.06);
+    }
+.btn-ico img {
+    width: 40px;
+    height: 40px;
+  }
+
+  </style>
+</head>
+<body>
+  <main class="hero" role="banner" aria-label="Portfolio hero">
+    <div class="container">
+      <!-- Text column -->
+      <section class="stack">
+        <span class="pill" aria-label="Role">UI/UX &amp; WEB DESIGNER</span>
+        <h1>Kamil Ali</h1>
+        <p class="lead">
+          Hi, I’m Kamil Ali, a UI/UX &amp; Web Designer. I design modern websites and apps using
+          HTML/CSS and JAVASCRIPT.
+        </p>
+      </section>
+
+      <!-- Social / contact rail -->
+      <nav class="rail" aria-label="Social links">
+        
+<a class="btn-ico" href="https://www.facebook.com/share/19onaUMSKi/">
+  <img src="facebook.png" alt="Facebook">
+</a>
+<a class="btn-ico" href="https://www.instagram.com/technical_world_0007?igsh=MWdlZnB6eXliODVreA==">
+  <img src="instagram.png" alt="Instagram">
+</a>
+<a class="btn-ico" href="ubeshytstrom@gmail.com?subject=Request%20for%20Website%20Development&body=Hello%20[Name],%0D%0A%0D%0AI%20hope%20this%20message%20finds%20you%20well.%20I%20am%20looking%20for%20a%20professional%20web%20developer%20to%20help%20me%20design%20and%20build%20a%20website%20for%20my%20[business/personal%20brand/project].%20The%20website%20should%20be%20modern,%20responsive,%20and%20user-friendly,%20with%20a%20clean%20design%20that%20reflects%20my%20goals%20and%20services.%0D%0A%0D%0AKey%20requirements:%0D%0A-%20Mobile-friendly%20and%20fast-loading%0D%0A-%20Easy%20navigation%20and%20attractive%20design%0D%0A-%20Integration%20with%20social%20media%20and%20contact%20options%0D%0A-%20[Add%20any%20specific%20features%20you%20want,%20e.g.,%20portfolio%20section,%20blog,%20e-commerce,%20booking%20system]">
+  <img src="email.png" alt="Email">
+</a>
+<a class="btn-ico" href="https://web.telegram.org/k/?account=2">
+  <img src="external-link.png" alt="Portfolio">
+</a>
+
+
+      </nav>
+    </div>
+
+    <!-- Decorative safe-area frame like the screenshot -->
+    <div class="pad" aria-hidden="true"></div>
+  </main>
+</body>
+</html>
